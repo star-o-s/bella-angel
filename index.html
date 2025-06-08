@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Angel</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #333;
+        }
+		
+		.album {
+	        display: flex;
+	        flex-wrap: wrap;
+			width: 100%;
+		}
+		
+		.photo {
+		    margin: 0; /* Elimina el margen entre los contenedores */
+			position: relative; /* Necesario para posicionar el titulo sobre la imagen */
+			overflow: hidden; /* Añade esto */
+		}
+		
+	    .photo.vertical {
+	      flex: 1 1 50%;
+	      max-width: 50%;
+	    }
+		
+		.photo img {
+			width: 100%;
+			display: block;
+		}
+		
+		.title {
+			height: 100vh; /* Ocupa toda la altura de la pantalla */
+			display: flex;
+			flex-direction: column; /* Los elementos se apilan verticalmente */
+			background-image: url(".jpg");
+	  		background-size: cover; /* La imagen cubre todo el div */
+	  		background-position: center; /* Centra la imagen */
+	  		background-repeat: no-repeat; /* Evita que la imagen se repita */
+			flex-direction: column; /* Apila los elementos verticalmente */
+			align-items: center; /* Centrado vertical */
+			display: flex;
+			justify-content: center; /* Centrado horizontal */
+			text-align: center;
+			
+		}
+		
+		.title div {
+			margin-bottom: 30px; /* Espacio entre los elementos */
+            /*text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);*/
+	  		background: linear-gradient(to right, #ff0000, #ffff00); /* Degradado */
+	  		-webkit-background-clip: text;
+	  		color: transparent;
+	  		background-clip: text;
+		}
+		
+		.title-text {
+			font-size: 100px;
+		}
+		
+		
+		/*texto*/
+		.photo-image {
+		    position: absolute; /* Posición relativa a su contenedor padre */
+			width: 100%;
+			height: 100%;
+			top: 0%;
+		    left: 50%; /* Centra horizontalmente */
+		    transform: translateX(-50%); /* Asegura el centrado completo */
+			font-size: 18px;
+		    background: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+		    color: white; /* Texto blanco */
+		    padding: 10px; /* Espaciado alrededor del texto */
+		    opacity: 0; /* Inicialmente oculto */
+		    transition: opacity 0.3s ease; /* Animación para que aparezca suavemente */
+			text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
+			text-align: center; 
+			justify-content: center; /* Centrar horizontalmente */
+			align-items: center; /* Centrar verticalmente */
+			display: flex; 
+		}
+
+		.photo:hover .photo-image {
+		    opacity: 1; /* Muestra el texto al pasar el cursor */
+
+		    animation: hideText 2s forwards; /* Activa la animación al pasar el cursor */
+		}
+		.photo-image-text {
+		    width: 50%; /* O cualquier porcentaje o valor fijo */
+		    text-align: center;
+		    padding: 10px;
+		}
+		.photo-image.hidden {
+		  opacity: 0 !important;
+		  /*pointer-events: none;*/
+		}
+		.photo-image-text-title {
+	  		background: linear-gradient(to right, #ff0000, #ffff00); /* Degradado */
+	  		-webkit-background-clip: text;
+	  		color: transparent;
+	  		background-clip: text;
+			font-family: 'Kokonor';
+			font-size: 100px;
+			top: 30%;
+		    position: absolute; /* Posición relativa a su contenedor padre */
+			
+		}
+		
+    </style>
+</head>
+<body>
+	<!--<div class="title">
+	    	<div class="title-text" style="font-family: 'Kokonor';">Bella Angel</div>
+		
+	</div>-->
+	
+	
+  <div class="album">
+    <div class="photo">
+      <img src="pexels-pixabay-458766.jpg">
+      <div class="photo-image">
+		  <div class="photo-image-text-title">Bella Angel</div>
+	  </div>
+    </div>
+    <div class="photo">
+      <img src="atractiva-chica-sonriendo-foto-interior-de-dichosa-modelo-femenina-con-cabello-negro.jpg">
+      <div class="photo-image">
+		  <div class="photo-image-text">Será una final entre dos jugadores que no han perdido ninguna en Grand Slam. La primera final en París para Sinner, la cuarta en Grand Slam, la tercera consecutiva, en busca de su cuarto título, mientras que el español buscará revalidar la corona y sumar su quinto grande en otras tantas finales.</div>
+	  </div>
+    </div>
+    <div class="photo">
+      <img src="pexels-anastasiya-gepp-654466-2065200.jpg">
+      <div class="photo-image">
+		  <div class="photo-image-text">Será el duodécimo duelo entre los dos jugadores, con siete victorias del español, que encadena cuatro victorias, la última en al final del Masters 1.000 de Roma de hace unas semanas. Sinner, el primer finalista en París desde Adriano Panetta en 1976</div>
+	  </div>
+    </div>
+	
+    <div class="photo">
+      <img src="pexels-viscoseillusion-3185201.jpg">
+      <div class="photo-image">
+		  <div class="photo-image-text">ha impuesto un tenis arrollador, no ha perdido un set, solo ha dejado escapar 53 juegos y apenas ha pasado en pista menos de trece horas en pista. Encadena 20 victorias en Grand Slam y esta temporada solo ha perdido un partido.</div></div>
+    </div>
+	    <div class="photo">
+	      <img src="pexels-rb-audiovisual-1819936.jpg">
+	      <div class="photo-image">
+			  <div class="photo-image-text">La previa
+	El tenista transalpino impuso el ímpetu de sus 23 años al serbio Novak Djokovic, 6-4, en la segunda semifinal. Mientras, Alcaraz tuvo más problemas para derrotar al italiano Lorenzo Musetti, 4-6, que tras anotarse el primer set y pelear el segundo, sintió problemas físicos que le impidieron acabar el partido.</div>
+			</div>
+	    </div>
+		
+		    <div class="photo">
+		      <img src="pexels-frendsmans-1926769.jpg">
+		      <div class="photo-image">
+				  <div class="photo-image-text">La previa
+		El tenista transalpino impuso el ímpetu de sus 23 años al serbio Novak Djokovic, 6-4, en la segunda semifinal. Mientras, Alcaraz tuvo más problemas para derrotar al italiano Lorenzo Musetti, 4-6, que tras anotarse el primer set y pelear el segundo, sintió problemas físicos que le impidieron acabar el partido.</div>
+				</div>
+		    </div>
+			    <div class="photo">
+			      <img src="pexels-arina-shilyaeva-1586333-3048694.jpg">
+			      <div class="photo-image">
+					  <div class="photo-image-text">La previa
+			El tenista transalpino impuso el ímpetu de sus 23 años al serbio Novak Djokovic, 6-4, en la segunda semifinal. Mientras, Alcaraz tuvo más problemas para derrotar al italiano Lorenzo Musetti, 4-6, que tras anotarse el primer set y pelear el segundo, sintió problemas físicos que le impidieron acabar el partido.</div>
+					</div>
+			    </div>
+		
+    <div class="photo">
+      <img src="pexels-alipazani-2810837.jpg">
+      <div class="photo-image">
+		  <div class="photo-image-text">El nivel de Sinner es tal que se antoja que solo el español Alcaraz puede amenazarlo. El número 2 del mundo comparecía en su semifinal tras haber mostrado un gran nivel contra el estadounidense Tommy Paul. Pero ante el italiano Musetti, el único que este año le ha hecho sombra en número de victorias sobre tierra batida, no tuvo una papeleta fácil.</div></div>
+    </div>
+    
+  </div>
+	
+    
+    <script>
+		
+		
+		
+		//hacer desaparecer el texto
+		document.addEventListener('DOMContentLoaded', function () {
+		  document.querySelectorAll('.photo-image').forEach(function (element) {
+		    element.addEventListener('click', function (event) {
+		      event.stopPropagation(); // Previene conflictos si tienes otros clics
+		      element.classList.toggle('hidden');
+		    });
+		  });
+		});
+		
+		
+	    // Detecta si la imagen es vertical y le asigna la clase .vertical
+	    window.addEventListener('load', () => {
+	      document.querySelectorAll('.photo img').forEach(img => {
+	        if (img.naturalHeight > img.naturalWidth) {
+	          img.parentElement.classList.add('vertical');
+	        }
+	      });
+	    });
+		
+		
+    </script>
+</body>
+</html>
