@@ -204,25 +204,32 @@
 		    const overlay = photo.querySelector('.photo-image');
 
 		    if (!isTouch) {
-		      // PC: usar hover
+		      // Para escritorio
 		      photo.addEventListener('mouseenter', () => {
 		        overlay.classList.add('show');
 		      });
-
 		      photo.addEventListener('mouseleave', () => {
 		        overlay.classList.remove('show');
 		      });
 		    } else {
-		      // Móvil: tocar para mostrar / ocultar
-		      photo.addEventListener('click', (e) => {
+		      // Para móvil: tocar para alternar visibilidad
+		      photo.addEventListener('click', function (e) {
 		        e.stopPropagation();
+
+		        // Ocultar otros visibles
+		        document.querySelectorAll('.photo-image.show').forEach(el => {
+		          if (el !== overlay) {
+		            el.classList.remove('show');
+		          }
+		        });
+
 		        overlay.classList.toggle('show');
 		      });
 		    }
 		  });
 
-		  // En móvil: tocar fuera de las fotos para ocultar los textos visibles
-		  document.addEventListener('click', (e) => {
+		  // Si tocas fuera de cualquier imagen, se ocultan todos
+		  document.addEventListener('click', function (e) {
 		    if (!e.target.closest('.photo')) {
 		      document.querySelectorAll('.photo-image.show').forEach(el => {
 		        el.classList.remove('show');
@@ -230,6 +237,7 @@
 		    }
 		  });
 		});
+		
 		
 	    // Detecta si la imagen es vertical y le asigna la clase .vertical
 	    window.addEventListener('load', () => {
