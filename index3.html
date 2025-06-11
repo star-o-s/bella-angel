@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Angel</title>
+	<style>
+		.gallery {
+			column-count: 3;
+			column-gap: 1em;
+		}
+		.gallery img {
+			width: 100%;
+			margin-bottom: 1em;
+			break-inside: avoid;
+			border-radius: 8px;
+		}
+		@media (max-width: 768px) {
+			.gallery {
+				column-count: 2;
+			}
+		}
+		@media (max-width: 480px) {
+			.gallery {
+ 			   column-count: 1;
+		   }
+	   }
+	   </style>
+	   <div class="gallery">
+		   <img src="pexels-anastasiya-gepp-654466-2065200.jpg" />
+		   <img src="pexels-rb-audiovisual-1819936.jpg" />
+		   <img src="pexels-pixabay-458766.jpg" />
+		   <img src="pexels-viscoseillusion-3185201.jpg" />
+		   <img src="pexels-frendsmans-1926769.jpg" />
+		   <img src="pexels-arina-shilyaeva-1586333-3048694.jpg" />
+		   <img src="pexels-alipazani-2810837.jpg" />
+	   </div>
+	</body>
+</html>
