@@ -27,9 +27,9 @@
 		   }
 	   }
 	   .text {
-		   color: gray;
+		   color: white;
 		   margin-bottom: 1em;
-		   background-color: ;
+		   background-color: gray;
 		   border-radius: 8px;
 		   padding: 5px;
 	   }
@@ -83,7 +83,16 @@
 	      function applyColor() {
 	        try {
 	          const color = colorThief.getColor(img);
-	          text.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+	          const [r, g, b] = color;
+
+	          // Asigna el color de fondo
+	          text.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+	          // Calcula la luminancia relativa (fórmula estándar)
+	          const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+
+	          // Si la luminancia es baja, usa texto blanco; si es alta, usa texto negro
+	          text.style.color = luminance < 128 ? '#ffffff' : '#000000';
 	        } catch (e) {
 	          console.log('Error leyendo color de la imagen', e);
 	        }
