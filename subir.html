@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Contenido</title>
+</head>
+<body>
+  <h2>Subir nueva foto</h2>
+  <form action="guardar.php" method="POST" enctype="multipart/form-data">
+    <label>Texto:</label><br>
+    <textarea name="texto" rows="4" cols="50" required></textarea><br><br>
+    
+    <label>Foto:</label><br>
+    <input type="file" name="foto" accept="image/*" required><br><br>
+    
+    <input type="submit" value="Subir">
+  </form>
+</body>
+</html>
