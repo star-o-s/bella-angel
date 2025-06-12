@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <title>Bella Angel Madrid</title>
+	<style>
+		.gallery {
+			column-count: 3;
+			column-gap: 1em;
+		}
+		.gallery img {
+			width: 100%;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			break-inside: avoid;
+			border-radius: 8px;
+		}
+		@media (max-width: 768px) {
+			.gallery {
+				column-count: 2;
+			}
+		}
+		@media (max-width: 480px) {
+			.gallery {
+ 			   column-count: 1;
+		   }
+	   }
+	   .text {
+		   color: white;
+		   background-color: gray;
+		   border-radius: 8px;
+		   padding: 5px;
+	   }
+	   .item {
+	     break-inside: avoid;
+	     display: block;
+	   }
+	   .front {
+	     position: relative;
+	     overflow: hidden;
+		 height: 300px;
+		 border-radius: 8px;
+		 margin-top: 1em;
+		 margin-bottom: 1em;
+		 color: white;
+		 text-align: center;
+	   }
+
+	   .front::before {
+	     content: "";
+	     position: absolute;
+	     top: 0; left: 0;
+	     width: 200%;
+	     height: 200%;
+	     background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+	     background-size: 400% 400%;
+	     animation: gradientMove 10s ease infinite;
+	     z-index: 0;
+	     border-radius: 8px;
+	   }
+
+	   .front .textfront {
+	     position: relative;
+	     z-index: 1;
+		 padding: 20px;
+	   }
+
+	   @keyframes gradientMove {
+	     0% { background-position: 0% 50%; }
+	     50% { background-position: 100% 50%; }
+	     100% { background-position: 0% 50%; }
+	   }
+	   .textname {
+  	     position: relative;
+  	     z-index: 1;
+  		 padding: 20px;
+  		background: linear-gradient(to right, #ffff00, #ff0000); /* Degradado */
+  		-webkit-background-clip: text;
+  		color: transparent;
+  		background-clip: text;
+		font-family: 'Kokonor';
+		
+		font-size: 2em;
+	   }
+	   .title {
+		   text-align: center;
+ 	      display: flex;
+ 	      justify-content: center;
+ 	      align-items: center;
+ 	      font-family: sans-serif;
+  		background: linear-gradient(to right, #ff0000, #ffff00); /* Degradado */
+  		-webkit-background-clip: text;
+  		color: transparent;
+  		background-clip: text;
+	   }
+	   </style>
+	   <div class="title">
+		   <h1>Bella Angel Madrid<h1>
+	   </div>
+	   <div class="gallery">
+		    <?php include 'bloques.html'; ?>
+		  <!-- <div class="front">
+			   <br><br>
+			 <div class="textname">Bella Angel Madrid</div>  
+		     <div class="textfront">Me llamo Bella, soy una preciosa modelo ucraniana. Me caracteriza mi juventud, elegancia, inteligencia, seriedad y discreción.</div>
+		   </div>-->
+   		  
+		     <div class="item">
+		   <img src="pexels-anastasiya-gepp-654466-2065200.jpg" />
+		   <div class="text">1 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+		     <div class="item">
+		   <img src="pexels-rb-audiovisual-1819936.jpg" />
+		   <div class="text">2 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+		     <div class="item">
+		   <img src="pexels-pixabay-458766.jpg" />
+		   <div class="text">3 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+		     <div class="item">
+		   <img src="pexels-viscoseillusion-3185201.jpg" />
+		   <div class="text">4 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+   		     <div class="item">
+   		   <img src="pexels-moose-photos-170195-1036623.jpg" />
+   		   <div class="text">5 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+   		   </div>
+		     <div class="item">
+		   <img src="pexels-frendsmans-1926769.jpg" />
+		   <div class="text">6 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+		     <div class="item">
+		   <img src="pexels-arina-shilyaeva-1586333-3048694.jpg" />
+		   <div class="text">7 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+		     <div class="item">
+		   <img src="pexels-alipazani-2810837.jpg" />
+		   <div class="text">8 Un texto es una composición ordenada de signos inscritos en un soporte mediante un sistema de escritura, cuya lectura permite recuperar el sentido referido por el emisor.</div>
+		   </div>
+	   </div>
+	</body>
+	<script>
+	  window.addEventListener('load', () => {
+	    const colorThief = new ColorThief();
+	    const items = document.querySelectorAll('.item');
+
+	    items.forEach(item => {
+	      const img = item.querySelector('img');
+	      const text = item.querySelector('.text');
+
+	      if (img.complete) {
+	        applyColor();
+	      } else {
+	        img.addEventListener('load', applyColor);
+	      }
+
+	      function applyColor() {
+	        try {
+	          const color = colorThief.getColor(img);
+	          const [r, g, b] = color;
+
+	          // Asigna el color de fondo
+	          text.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+	          // Calcula la luminancia relativa (fórmula estándar)
+	          const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+
+	          // Si la luminancia es baja, usa texto blanco; si es alta, usa texto negro
+	          text.style.color = luminance < 128 ? '#ffffff' : '#000000';
+	        } catch (e) {
+	          console.log('Error leyendo color de la imagen', e);
+	        }
+	      }
+	    });
+	  });
+	</script>
+</html>
