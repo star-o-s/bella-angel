@@ -40,15 +40,12 @@
 	   .front {
 	     position: relative;
 	     overflow: hidden;
-		 height: 400px;
+		 height: 300px;
 		 border-radius: 8px;
 		 margin-top: 1em;
 		 margin-bottom: 1em;
 		 color: white;
 		 text-align: center;
-		 display: flex;
-		   align-items: center;     /* Centrado vertical */
-		   justify-content: center; /* Centrado horizontal (opcional) */
 	   }
 
 	   .front::before {
@@ -75,10 +72,22 @@
 	     50% { background-position: 100% 50%; }
 	     100% { background-position: 0% 50%; }
 	   }
+	   .textname {
+  	     position: relative;
+  	     z-index: 1;
+  		 padding: 20px;
+  		background: linear-gradient(to right, #ffff00, #ff0000); /* Degradado */
+  		-webkit-background-clip: text;
+  		color: transparent;
+  		background-clip: text;
+		font-family: 'Kokonor';
+		
+		font-size: 2vw;
+	   }
 	   </style>
 	   <div class="gallery">
 		   <div class="front">
-			   
+			 <div class="textname">Bella Angel Madrid</div>  
 		     <div class="textfront">Me llamo Bella, soy una preciosa modelo ucraniana. Me caracteriza mi juventud, elegancia, inteligencia, seriedad y discreción.</div>
 		   </div>
 		     <div class="item">
